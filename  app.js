@@ -11,9 +11,9 @@ const app = express();
 
 dotenv.config({path : "./config/config.env"})
 connectDB();
-
+const router = express.Router();
 app.use('/user', userRouter);
-
+app.use(router.get('/', (req,res)=>{res.send("<h1>HOMEPAGE</h1>")}))
 app.use(errorMiddleware);
 
 
