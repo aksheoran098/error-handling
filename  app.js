@@ -1,5 +1,5 @@
 import express from "express"
-import { connectDB } from "./config/database.js";
+// import { connectDB } from "./config/database.js";
 import dotenv from "dotenv"
 
 import errorMiddleware from "./middlewares/Error.js";
@@ -10,7 +10,7 @@ const app = express();
 
 
 dotenv.config({path : "./config/config.env"})
-connectDB();
+// connectDB();
 const router = express.Router();
 app.use('/user', userRouter);
 app.use(router.get('/', (req,res)=>{res.send("<h1>HOMEPAGE</h1>")}))
